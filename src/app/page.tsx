@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Globe, Palette, Zap, Shield, Mail, Phone, ArrowRight } from "lucide-react";
+import { Code2, Smartphone, Globe, Palette, Zap, Shield, Mail, Phone, ArrowRight, Sparkles, Star } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,39 +48,44 @@ export default function Home() {
     <>
       <Navbar />
       
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+        {/* Decorative Elements */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 mb-8 animate-pulse">
-              <Zap className="w-4 h-4" />
-              <span className="text-sm font-medium">Transformando ideias em realidade digital</span>
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 backdrop-blur-sm text-cyan-400 mb-8 shadow-lg shadow-cyan-500/10">
+              <Sparkles className="w-5 h-5" />
+              <span className="text-sm font-semibold tracking-wide">Excelência em Desenvolvimento Digital</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-2xl">
                 CodeCraft
               </span>
               <br />
-              <span className="text-gray-900 dark:text-gray-100">
-                Desenvolvimento de Excelência
+              <span className="text-white drop-shadow-lg">
+                Desenvolvimento Premium
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
-              Criamos aplicativos, sites e sistemas web de alta qualidade com tecnologias modernas. 
-              Sua visão, nossa expertise.
+            <p className="text-xl sm:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+              Transformamos suas ideias em experiências digitais extraordinárias com tecnologias de ponta e design sofisticado.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/auth">
-                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
+                <Button size="lg" className="group bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 hover:from-cyan-400 hover:via-blue-400 hover:to-indigo-400 text-white text-lg px-10 py-7 rounded-2xl shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-500 hover:scale-105 border border-white/10">
                   Começar Projeto
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="#servicos">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-xl border-2 hover:border-cyan-500 hover:text-cyan-600 transition-all duration-300">
+                <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-2xl border-2 border-slate-700 bg-slate-900/50 backdrop-blur-sm text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800/50 hover:text-cyan-400 transition-all duration-500 hover:scale-105 shadow-xl">
                   Ver Serviços
                 </Button>
               </Link>
@@ -89,14 +94,18 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="servicos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800/50">
+        <section id="servicos" className="relative py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                Nossos Serviços
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-6">
+                <Star className="w-4 h-4" />
+                <span className="text-sm font-semibold">Serviços Premium</span>
+              </div>
+              <h2 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+                Soluções de Elite
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Soluções completas para transformar sua presença digital
+              <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
+                Expertise completa para elevar sua presença digital a outro nível
               </p>
             </div>
 
@@ -104,16 +113,17 @@ export default function Home() {
               {services.map((service, index) => (
                 <Card 
                   key={index} 
-                  className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-cyan-500/50 bg-white dark:bg-gray-900"
+                  className="group relative overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-105 border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-sm"
                 >
-                  <CardContent className="p-8">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardContent className="relative p-8">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-cyan-500/20`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-slate-400 leading-relaxed font-light">
                       {service.description}
                     </p>
                   </CardContent>
@@ -124,89 +134,110 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="p-8">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                  100 mill +
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="relative p-10 rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl"></div>
+                <div className="relative text-center">
+                  <div className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">
+                    100 mil+
+                  </div>
+                  <p className="text-slate-400 text-lg font-light">Projetos Entregues</p>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-lg">Projetos Entregues</p>
               </div>
-              <div className="p-8">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                  100 mil+
+              <div className="relative p-10 rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl"></div>
+                <div className="relative text-center">
+                  <div className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">
+                    100 mil+
+                  </div>
+                  <p className="text-slate-400 text-lg font-light">Clientes Satisfeitos</p>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-lg">Clientes Satisfeitos</p>
               </div>
-              <div className="p-8">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                  5+
+              <div className="relative p-10 rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm border border-slate-700 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl"></div>
+                <div className="relative text-center">
+                  <div className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">
+                    5+
+                  </div>
+                  <p className="text-slate-400 text-lg font-light">Anos de Experiência</p>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-lg">Anos de Experiência</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contato" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-500 to-blue-600">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Vamos Conversar?
+        <section id="contato" className="relative py-24 px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-indigo-500/10"></div>
+          <div className="relative max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-8">
+              <Sparkles className="w-4 h-4" />
+              <span className="text-sm font-semibold">Entre em Contato</span>
+            </div>
+            
+            <h2 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+              Vamos Criar Algo Incrível?
             </h2>
-            <p className="text-xl mb-12 text-cyan-50">
-              Entre em contato e descubra como podemos transformar suas ideias em realidade
+            <p className="text-xl text-slate-300 mb-12 font-light">
+              Transforme suas ideias em realidade com nossa expertise premium
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <a 
                 href="tel:+5569992688660"
-                className="flex items-center justify-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                className="group relative p-8 bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm rounded-3xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 shadow-xl"
               >
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm text-cyan-100 mb-1">Telefone</p>
-                  <p className="text-lg font-semibold">+55 69 99268-8660</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative flex items-center justify-center gap-4">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                    <Phone className="w-7 h-7 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm text-slate-400 mb-1 font-light">Telefone</p>
+                    <p className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">+55 69 99268-8660</p>
+                  </div>
                 </div>
               </a>
 
               <a 
                 href="mailto:craftcode83@gmail.com"
-                className="flex items-center justify-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                className="group relative p-8 bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm rounded-3xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 shadow-xl"
               >
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm text-cyan-100 mb-1">Email</p>
-                  <p className="text-lg font-semibold">craftcode83@gmail.com</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative flex items-center justify-center gap-4">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                    <Mail className="w-7 h-7 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm text-slate-400 mb-1 font-light">Email</p>
+                    <p className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">craftcode83@gmail.com</p>
+                  </div>
                 </div>
               </a>
             </div>
 
             <Link href="/auth">
-              <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-xl shadow-2xl hover:scale-105 transition-all duration-300">
-                Criar Conta Gratuita
-                <ArrowRight className="ml-2 w-5 h-5" />
+              <Button size="lg" className="group bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 hover:from-cyan-400 hover:via-blue-400 hover:to-indigo-400 text-white text-lg px-10 py-7 rounded-2xl shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-500 hover:scale-105 border border-white/10">
+                Criar Conta Premium
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-gray-400">
+        <footer className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
           <div className="max-w-7xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
-                <Code2 className="w-6 h-6 text-white" />
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <Code2 className="w-7 h-7 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">CodeCraft</span>
+              <span className="text-2xl font-bold text-white">CodeCraft</span>
             </div>
-            <p className="mb-4">Transformando ideias em realidade digital desde 2019</p>
-            <p className="text-sm">© 2024 CodeCraft. Todos os direitos reservados.</p>
+            <p className="text-slate-400 mb-4 font-light">Transformando ideias em realidade digital desde 2019</p>
+            <p className="text-sm text-slate-500 font-light">© 2024 CodeCraft. Todos os direitos reservados.</p>
           </div>
         </footer>
       </main>
