@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Code2, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
@@ -32,11 +31,6 @@ export default function Navbar() {
               Contato
             </Link>
             <ThemeToggle />
-            <Link href="/auth">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white">
-                Entrar
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,11 +61,6 @@ export default function Navbar() {
               className="block text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
             >
               Contato
-            </Link>
-            <Link href="/auth" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white">
-                Entrar
-              </Button>
             </Link>
           </div>
         )}

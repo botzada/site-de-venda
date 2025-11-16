@@ -5,7 +5,6 @@ import Script from "next/script";
 import "./globals.css";
 // Import all available fonts for AI usage
 import "../lib/fonts";
-import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -19,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodeCraft - Desenvolvimento de Excelência",
-  description: "Criamos aplicativos, sites e sistemas web de alta qualidade com tecnologias modernas",
+  title: "CodeCraft - Desenvolvimento Premium",
+  description: "Transformamos suas ideias em experiências digitais extraordinárias. Desenvolvimento de apps, sites, UI/UX design e consultoria técnica de excelência.",
 };
 
 export default function RootLayout({
@@ -29,22 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <head>
         <Script src="/lasy-bridge.js" strategy="beforeInteractive" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-white`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster position="top-right" richColors />
-        </ThemeProvider>
+        {children}
+        <Toaster position="top-right" richColors theme="dark" />
       </body>
     </html>
   );
